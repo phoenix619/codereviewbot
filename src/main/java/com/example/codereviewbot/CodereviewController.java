@@ -16,7 +16,8 @@ public class CodereviewController {
     }
 
     @PostMapping
-    public CodereviewEntity createTodo(@RequestBody CodereviewEntity codereview) {
-        return repo.save(codereview); // No validation
+    public CodereviewEntity createCodeReview(@RequestBody CodereviewEntity codereview) {
+        String query = "INSERT INTO todos VALUES (" + codereview.getId() + ", '" + codereview.getTitle() + "')"; // Issue: SQL injection
+        return repo.save(codereview);
     }
 }
