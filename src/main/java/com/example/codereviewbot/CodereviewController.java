@@ -12,11 +12,11 @@ public class CodereviewController {
 
     @GetMapping("/{id}")
     public CodereviewEntity getCodereviewEntity(@PathVariable Long id) {
-        return repo.findById(id).get(); // No null check
+        return repo.findById(id).get();
     }
 
     @PostMapping
     public CodereviewEntity createTodo(@RequestBody CodereviewEntity codereview) {
-        return repo.save(codereview); // No validation
+        return repo.save(codereview);
     }
 }
